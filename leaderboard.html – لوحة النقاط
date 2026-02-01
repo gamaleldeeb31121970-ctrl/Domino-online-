@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>لوحة النقاط</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
+    <script src="js/firebase.js" defer></script>
+</head>
+<body>
+    <h1>أعلى اللاعبين</h1>
+    <ul id="leaderboard"></ul>
+
+    <script>
+        db.collection("players").orderBy("score", "desc").limit(10).get()
+        .then(snapshot => {
+            const list = document.getElementById('leaderboard');
+            snapshot.forEach(doc => {
+                const li = document.createElement('li');
+                li.textContent = doc.data().name + ': ' + doc.data().score;
+                list.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
