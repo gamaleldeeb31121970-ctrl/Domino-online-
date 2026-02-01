@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>SmartPlayPortal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
+    <script src="js/firebase.js" defer></script>
+</head>
+<body>
+    <h1>مرحباً بك في SmartPlayPortal</h1>
+    <div id="auth">
+        <input type="email" id="email" placeholder="البريد الإلكتروني">
+        <input type="password" id="password" placeholder="كلمة السر">
+        <button onclick="register()">تسجيل</button>
+        <button onclick="login()">دخول</button>
+    </div>
+    <div id="games">
+        <a href="games/domino/index.html">لعبة الدومينو</a>
+        <a href="leaderboard.html">لوحة النقاط</a>
+    </div>
+</body>
+</html>
 
